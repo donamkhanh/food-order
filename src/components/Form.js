@@ -1,16 +1,16 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 import { connect } from "react-redux";
 import { loadMenu } from '../actions/loadMenu';
 import FoodItems from './FoodItems';
 
 const mapDispatchToProps = dispatch => {
 	return {
-		loadMenu: () => dispatch(loadMenu())
+		loadMenu: () => dispatch(loadMenu())		
 	};
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = state => {	
 	return state.menus;
 };
 
@@ -19,7 +19,7 @@ const API_URL = 'http://localhost/food-api.php';
 
 class Form extends React.Component {
 	state = {
-		selectedItems: new Set(),
+		// selectedItems: new Set(),
 		errorMessage: null,
 		successMessage: null,
 		redirect: false
@@ -29,17 +29,17 @@ class Form extends React.Component {
 		this.props.loadMenu();
 	}
 
-	clickHandler = (item) => {				
-		let items = this.state.selectedItems;
+	// clickHandler = (item) => {				
+	// 	let items = this.state.selectedItems;
 		
-		if (items.has(item)) {
-			items.delete(item);
-		} else {
-			items.add(item);
-		}
+	// 	if (items.has(item)) {
+	// 		items.delete(item);
+	// 	} else {
+	// 		items.add(item);
+	// 	}
 
-		this.setState({selectedItems: items});
-	}
+	// 	this.setState({selectedItems: items});
+	// }
 
 	sendOrder = (e) => {
 		e.preventDefault();
@@ -83,8 +83,8 @@ class Form extends React.Component {
 		}
 	}
 
-	render() {		
-		console.log(this.props);		
+	render() {
+		console.log(this.props.menus);
 		return(
 			<form onSubmit={ this.sendOrder }>
 				{this.renderRedirect()}
@@ -101,7 +101,7 @@ class Form extends React.Component {
 				<input type="text" name="name" placeholder="Nhập họ tên..."/>
 				<button>Đặt món</button>
 
-				<FoodItems items={ this.props.menus } clickHandler={ this.clickHandler } selectedItems={ this.state.selectedItems } />
+				<FoodItems items={ this.props.menus } selectedItems={ this.state.selectedItems } />
 
 				<p className="text-center"><em>Hình ảnh chỉ có tính chất minh họa ;-)</em></p>				
 			</form>

@@ -1,4 +1,5 @@
 import { MENU } from '../constants/Menu';
+import * as actionTypes from '../constants/actionTypes';
 
 const today = new Date();  
 const weekday = {
@@ -20,7 +21,7 @@ MENU.all.primary_foods.forEach(food => {
 
 export const loadMenu = () => {
     return {
-        type: 'LOAD_MENU',
+        type: actionTypes.LOAD_MENU,
         payload: items
     }
 }

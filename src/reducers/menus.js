@@ -1,15 +1,30 @@
-import { LOAD_MENU } from '../constants/actionTypes';
+import * as actionTypes from '../constants/actionTypes';
 
 const initialState = {
-    menus: null
+    menus: null,
+    selectedItems: new Set()
 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case LOAD_MENU:
+        case actionTypes.LOAD_MENU:
             return {
                 ...state,
                 menus: action.payload
+            };
+
+        case actionTypes.TOGGLE_SELECT_FOOD:
+            let items = state.selectedItems;            
+		
+        	if (items.has(action.payload.selectedFood)) {
+        		items.delete(action.payload.selectedFood);
+        	} else {
+        		items.add(action.payload.selectedFood);
+            }            
+            
+            return {
+                ...state,
+                selectedItems: items
             };
 
         default:
