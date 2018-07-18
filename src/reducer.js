@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import menus from "./reducers/menus";
+import food from "./reducers/menu";
 
-export default combineReducers({ menus: menus });
+export default combineReducers({ food: food });

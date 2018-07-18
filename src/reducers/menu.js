@@ -1,7 +1,7 @@
 import * as actionTypes from '../constants/actionTypes';
 
 const initialState = {
-    menus: null,
+    menuItems: null,
     selectedItems: new Set()
 }
 
@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
         case actionTypes.LOAD_MENU:
             return {
                 ...state,
-                menus: action.payload
+                menuItems: action.payload
             };
 
         case actionTypes.TOGGLE_SELECT_FOOD:
@@ -24,7 +24,8 @@ export default (state = initialState, action) => {
             
             return {
                 ...state,
-                selectedItems: items
+                selectedItems: items,
+                timestamp: new Date().getMilliseconds()
             };
 
         default:

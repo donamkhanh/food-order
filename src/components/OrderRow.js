@@ -1,8 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-
-// const API_URL = 'http://172.16.10.125:8080/food-api.php';
-const API_URL = 'http://localhost/food-api.php';
+import { API_URL } from '../constants/api';
 
 class OrderRow extends React.Component {    
     state = {

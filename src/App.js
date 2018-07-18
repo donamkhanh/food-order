@@ -1,27 +1,21 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Titles from './components/Titles';
-import Form from './components/Form';
-import Order from './components/Order';
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-const App = (props) => (
-  <div>
-    <div className="wrapper">
-      <div className="main container">            
-        <div className="row">
-          <div className="col-md-5 title-container">
-            <Titles />
-          </div>
-          <div className="col-md-7 form-container">
-            <Switch>
-              <Route exact path='/' component={Form}/>
-              <Route path='/orders' component={Order} />
-            </Switch>                
-          </div>
-        </div>            
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
 
 export default App;

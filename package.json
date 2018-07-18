@@ -1,11 +1,10 @@
 {
-  "name": "my-app",
+  "name": "food-order-v2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.1",
     "classnames": "^2.2.6",
-    "connected-react-router": "^4.3.0",
     "history": "^4.7.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -14,7 +13,7 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-form": "^7.4.2"
   },
   "scripts": {
     "start": "react-scripts start",

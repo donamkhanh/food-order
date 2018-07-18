@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import OrderRow from './OrderRow';
-
-// const API_URL = 'http://172.16.10.125:8080/food-api.php';
-const API_URL = 'http://localhost/food-api.php';
+import { API_URL } from '../constants/api';
 
 class Order extends React.Component {
 	state = {

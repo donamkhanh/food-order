@@ -3,17 +3,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./App.css";
+import App from './pages/App';
 
 import store from "./store";
-import App from './App';
-// import registerServiceWorker from './registerServiceWorker';
+
+import './index.css';
 
 ReactDOM.render((
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>
-), document.getElementById('root'));
-// registerServiceWorker();
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  ), document.getElementById('root'));
